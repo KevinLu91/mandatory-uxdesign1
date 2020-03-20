@@ -105,17 +105,27 @@ const Container = styled.div`
     font-size: 14px;
   }
 
+  .input-container .input__active:disabled + label .title-placeholder{
+    transform: translateY(-100%);
+    font-size: 14px;
+  }
+
   button{
     margin-top: 30px;
   }
+
 `
 
 function App() {
   const [state, updateState] = useState(true);
+  const [text, updateText] = useState('');
 
   function handleDisable() {
     updateState(false);
-    console.log(state);
+  }
+
+  function handleOnChange(e){
+    updateText(e.target.value);
   }
 
   function handleEnable() {
@@ -129,22 +139,18 @@ function App() {
          <h3>Sign up</h3>
         </div>
         <div className='main-container'>
-            <div className='input-container'>
-              {state ? <input required/> : <input required disabled='disabled'/>}
-              <label className='input-label'><span className='title-placeholder'>Name</span></label>
-            </div>
-            <div className='input-container'>
-              {state ? <input required/> : <input required disabled='disabled'/>}
-              <label className='input-label'><span className='title-placeholder'>Last Name</span></label>
-            </div>
-
-
+          <div className='input-container'>
+            {state ? <input onChange={handleOnChange} required/> :
+            text ? <input onChange={handleOnChange} className='input__active' required disabled='disabled'/> :
+             <input onChange={handleOnChange} required disabled='disabled'/>}
+            <label className='input-label'><span className='title-placeholder'>Text field</span></label>
+          </div>
           <Switch state={state}/>
           <Checkbox state={state}/>
           <RadioBtn state={state}/>
           <button onClick={handleDisable}>Disable</button>
           <button onClick={handleEnable}>Enable</button>
-        </div>
+      </div>
       </Container>
     </div>
   );

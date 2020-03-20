@@ -37,7 +37,7 @@ const Container = styled.div`
     content: '';
     bottom: 50%;
     right: 50%;
-    top: -1.2px;
+    top: -2px;
     height: 23px;
     width: 23px;
     border: 0.5px solid #ebebeb;

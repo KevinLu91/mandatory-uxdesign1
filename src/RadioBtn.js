@@ -61,8 +61,8 @@ const Container = styled.div`
 
   .radio__checkmark:after{
     background: #6200eeff;
-    top:  2.6px;
-    left: 2.6px;
+    top:  17%;
+    left: 17%;
     width: 10px;
     height: 10px;
     border-radius: 50%;

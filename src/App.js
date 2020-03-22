@@ -11,14 +11,17 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 30px;
 
   .header-container{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 60%;
-    height: 50px;
-    border: 1px solid black;
+    height: 80px;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.45);
+    background-color: #6202ee;
+    color: white;
   }
 
   .main-container{
@@ -27,7 +30,7 @@ const Container = styled.div`
     align-items: center;
     width: 60%;
     height: 500px;
-    border: 1px solid black;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.45);
 
   }
 
@@ -136,7 +139,7 @@ function App() {
     <div className="App">
       <Container>
         <div className='header-container'>
-         <h3>Sign up</h3>
+         <h3>mandatory-uxdesign1</h3>
         </div>
         <div className='main-container'>
           <div className='input-container'>
